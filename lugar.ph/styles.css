@@ -132,6 +132,8 @@ body {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
+  margin-right: 0.5cm;
+  margin-left: 0.5cm;
   margin-bottom: 0;
   padding: 0 0.5rem;
 }
