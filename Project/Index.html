@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PH Flood Projects Map</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- MarkerCluster CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #map {
+    height: 100vh;
+    width: 100%;
+  }
+
+  /* Sidebar Styles */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* hidden off-screen by default */
+    width: 300px;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  #sidebar.active {
+    left: 0;
+  }
+
+  #closeBtn {
+    background: red;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Toggle Button */
+  #toggleSidebar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    padding: 10px;
+    background: white;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  /* Search Bar */
+  #search-area {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  #search-input {
+    padding: 5px;
+  }
+
+  #search-btn {
+    padding: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<button id="toggleSidebar">☰ Projects</button>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <button id="closeBtn">Close</button>
+  <div id="info"><h3>Project Info</h3>Select a marker.</div>
+</div>
+
+<!-- Search -->
+<div id="search-area">
+  <input type="text" id="search-input" placeholder="Search projects...">
+  <button id="search-btn">Search</button>
+</div>
+
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Load Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Load MarkerCluster JS -->
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<!-- Load your projects first -->
+<script src="projects.js"></script>
+
+<!-- Then main script -->
+<script src="script.js"></script>
+
+<script>
+  // Sidebar toggle functionality (add this in script.js if preferred)
+  const sidebar = document.getElementById('sidebar');
+  document.getElementById('toggleSidebar').addEventListener('click', () => {
+    sidebar.classList.add('active');
+  });
+  document.getElementById('closeBtn').addEventListener('click', () => {
+    sidebar.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
