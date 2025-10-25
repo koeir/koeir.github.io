@@ -125,3 +125,9 @@ h2 {
 	margin: 0.25rem 0;
 	color: #ddd;
 }
+
+@media screen and (max-width: 600px) {
+    #search-input {
+        width: 100px;
+    }
+}
