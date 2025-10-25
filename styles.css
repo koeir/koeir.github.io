@@ -93,8 +93,9 @@ body {
 	color: white;
 	padding: 8px 12px;
 	cursor: pointer;
-	width: 100%;
-	margin-bottom: 20px;
+	width: 80%;
+	margin: 0 auto 20px;
+	display: block;
 }
 
 /* Toggle Button */
