@@ -1,6 +1,10 @@
 // script.js — assumes projects.js defines `PROJECTS` array
+const location_coordinates = [
+    { name: "Bacolod", x: 10.640739, y: 122.968956},
+]
 
-const map = L.map('map', { preferCanvas: true }).setView([12.8797, 121.7740], 6); // Philippines center-ish
+const bacolod = location_coordinates.find(loc => loc.name === "Bacolod");
+const map = L.map('map', { preferCanvas: true }).setView([bacolod.x, bacolod.y], 13); // Philippines center-ish
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
 
 // Marker cluster group
