@@ -3,11 +3,14 @@ body {
 	height: 100%;
 	margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background: #111;
-    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 #map {
 	position: absolute;
