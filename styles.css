@@ -125,9 +125,3 @@ h2 {
 	margin: 0.25rem 0;
 	color: #ddd;
 }
-
-@media (min-width: 480px) {
-    #search-input {
-        width: 50%;
-    }
-}
