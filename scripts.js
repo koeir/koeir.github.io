@@ -4,7 +4,7 @@ const location_coordinates = [
 ]
 
 const bacolod = location_coordinates.find(loc => loc.name === "Bacolod");
-const map = L.map('map', { preferCanvas: true }).setView([bacolod.x, bacolod.y], 13); // Philippines center-ish
+const map = L.map('map', { preferCanvas: true, zoomControl: false }).setView([bacolod.x, bacolod.y], 13); 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
 
 // Marker cluster group
