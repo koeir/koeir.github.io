@@ -126,7 +126,7 @@ h2 {
 	color: #ddd;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) {
     #search-input {
         width: 50%;
     }
