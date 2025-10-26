@@ -50,7 +50,7 @@ PROJECTS.forEach((project) => {
       <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
     `);
 
-        const pan_y_allowance = 0.00015;
+        const pan_y_allowance = 0.0015;
         map.panTo(new L.LatLng((project.coords[0] - pan_y_allowance), project.coords[1]));
 	});
 
