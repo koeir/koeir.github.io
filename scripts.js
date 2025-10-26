@@ -33,26 +33,27 @@ closeBtn.addEventListener("click", closeSidebar);
 map.on("click", () => closeSidebar());
 
 // Create markers from PROJECTS
-PROJECTS.forEach((p) => {
-	const m = L.marker(p.coords);
-	const popupHtml = `<b>${p.name}</b><br>${p.area}<br><small>${p.status} • ${p.start} - ${p.end}</small>`;
-	m.bindPopup(popupHtml);
+PROJECTS.forEach((project) => {
+	const marker = L.marker(project.coords);
+	const popupHtml = `<b>${project.name}</b><br>${project.area}<br><small>${project.status} • ${project.start} - ${project.end}</small>`;
+	marker.bindPopup(popupHtml);
 
-	m.on("click", () => {
+	marker.on("click", () => {
 		openSidebar(`
-      <h3>${p.name}</h3>
-      <p><strong>Location:</strong> ${p.area}</p>
-      <p><strong>Budget:</strong> ${p.budget}</p>
-      <p><strong>Started:</strong> ${p.start}</p>
-      <p><strong>Estimated Completion:</strong> ${p.end}</p>
-      <p><strong>Status:</strong> ${p.status}</p>
-      <p>${p.desc}</p>
-      <p style="font-size:0.85em;color:#bbb;">Source: ${p.source || "DPWH/news"}</p>
+      <h3>${project.name}</h3>
+      <p><strong>Location:</strong> ${project.area}</p>
+      <p><strong>Budget:</strong> ${project.budget}</p>
+      <p><strong>Started:</strong> ${project.start}</p>
+      <p><strong>Estimated Completion:</strong> ${project.end}</p>
+      <p><strong>Status:</strong> ${project.status}</p>
+      <p>${project.desc}</p>
+      <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
     `);
+
 	});
 
-	markersCluster.addLayer(m);
-	markers.push({ marker: m, data: p });
+	markersCluster.addLayer(marker);
+	markers.push({ marker: marker, data: project });
 });
 
 map.addLayer(markersCluster);
