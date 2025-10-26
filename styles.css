@@ -60,6 +60,7 @@ body {
 #sidebar {
 	position: absolute;
 	left: 0;
+    right: 0;
 	top: 0;
 	height: 100vh;
 	width: 32%;
@@ -74,7 +75,8 @@ body {
 		transform 0.35s ease,
 		opacity 0.35s ease;
 	z-index: 1500;
-	overflow: auto;
+	overflow: hidden;
+	box-sizing: border-box;
 }
 
 #sidebar.active {
