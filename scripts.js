@@ -50,7 +50,8 @@ PROJECTS.forEach((project) => {
       <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
     `);
 
-        map.panTo(new L.LatLng((project.coords[0]), project.coords[1]));
+        const pan_y_allowance = 0.0000015;
+        map.panTo(new L.LatLng((project.coords[0] - pan_y_allowance), project.coords[1]));
 	});
 
 	markersCluster.addLayer(marker);
