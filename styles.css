@@ -74,8 +74,9 @@ body {
 		transform 0.35s ease,
 		opacity 0.35s ease;
 	z-index: 1500;
-	overflow: hidden;
 	box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 #sidebar.active {
@@ -88,11 +89,15 @@ body {
 	pointer-events: none;
 }
 
+#info {
+    flex-grow: 1;
+    overflow-y: auto;
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
 #closeBtn {
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
+    flex-shrink: 0;
 	background: rgb(35, 87, 188, 0.5);
     background-filter: blur(10px);
 	border: none;
@@ -100,6 +105,7 @@ body {
 	padding: 8px;
 	cursor: pointer;
 	width: 80%;
+    margin: 18px auto 0;
 	display: block;
 }
 

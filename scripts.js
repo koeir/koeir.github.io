@@ -110,3 +110,11 @@ searchBtn.addEventListener("click", handleSearch);
 searchInput.addEventListener("keypress", (e) => {
 	if (e.key === "Enter") handleSearch();
 });
+
+infoEl.addEventListener("scroll", () => {
+    const { scrollTop, scrollHeight, clientHeight } = infoEl;
+    const atTop = scrollTop === 0;
+
+    // Adjust opacity based on scroll position
+    closeBtn.style.opacity = atTop ? 1 : 0.5;
+});
