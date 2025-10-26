@@ -58,7 +58,7 @@ body {
 
 /* Sidebar Styles */
 #sidebar {
-	position: relative;
+	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100vh;
@@ -92,18 +92,8 @@ body {
 #info {
     flex-grow: 1;
     overflow-y: auto;
-    padding-bottom: 50px; /* Space for the close button */
-}
-
-#info::after {
-    content: '';
-    position: absolute;
-    bottom: 70px; /* Adjust to be above the button */
-    left: 0;
-    right: 0;
-    height: 50px;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.85));
-    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 
 #closeBtn {
@@ -177,10 +167,5 @@ h2 {
     #info {
         flex-grow: 1;
         overflow-y: auto;
-        height: 100%;
-    }
-
-    #info::after {
-        bottom: 80px; /* Adjust for mobile */
     }
 }
