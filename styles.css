@@ -107,6 +107,7 @@ body {
 	width: 80%;
     margin: 18px auto 0;
 	display: block;
+    transition: opacity 0.3s ease;
 }
 
 /* Toggle Button */
