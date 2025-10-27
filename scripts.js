@@ -114,6 +114,21 @@ searchInput.addEventListener("keypress", (e) => {
 	if (e.key === "Enter") handleSearch();
 });
 
+infoEl.addEventListener("click", (event) => {
+    if (event.target.tagName === "IMG") {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullscreenImage");
+        modal.style.display = "block";
+        modalImg.src = event.target.src;
+    }
+});
+
+// Close modal
+const modal = document.getElementById("imageModal");
+modal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
 infoEl.addEventListener("scroll", () => {
     const { scrollTop, scrollHeight, clientHeight } = infoEl;
     const atTop = scrollTop === 0;
