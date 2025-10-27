@@ -51,7 +51,7 @@ FLOOD_PRONE_AREAS.forEach((fp_area) => {
       <p><strong>Status:</strong> ${fp_area.status}</p>
       <p>${fp_area.desc}</p>
       <div class="image-gallery">
-        ${fp_area.images.map((image) => `<img src="${image}" alt="Area image">`).join("")}
+        ${fp_area.images && fp_area.images.length > 0 ? fp_area.images.map((image) => `<img src="${image}" alt="Area image">`).join("") : "No image available."}
       </div>
       <p style="font-size:0.85em;color:#bbb;">Source: ${fp_area.source || "DPWH/news"}</p>
     `);
