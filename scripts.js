@@ -47,7 +47,7 @@ FLOOD_PRONE_AREAS.forEach((fp_area) => {
       <p><strong>Flood-Control Project:</strong> ${fp_area.project}</p>
       <p><strong>Budget:</strong> ${fp_area.budget}</p>
       <p><strong>Started:</strong> ${fp_area.start}</p>
-      <p><strong>Estimated Completion:</strong> ${fp_area.end}</p>
+      <p><strong>Completion:</strong> ${fp_area.end}</p>
       <p><strong>Status:</strong> ${fp_area.status}</p>
       <p>${fp_area.desc}</p>
       <div class="image-gallery">
