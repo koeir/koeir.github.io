@@ -41,7 +41,7 @@ PROJECTS.forEach((project) => {
 	marker.on("click", () => {
 		openSidebar(`
       <h3 style="text-align: center;">${project.name}</h3>
-      <p><strong>Location:</strong> ${project.area}</p>
+      <p><strong>Area:</strong> ${project.area}</p>
       <p><strong>Budget:</strong> ${project.budget}</p>
       <p><strong>Started:</strong> ${project.start}</p>
       <p><strong>Estimated Completion:</strong> ${project.end}</p>
