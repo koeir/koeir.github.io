@@ -43,8 +43,14 @@ const FLOOD_PRONE_AREAS = [
 		end: "2025",
 		status: "Ongoing",
 		desc: "Upgrading drainage systems to improve water flow.",
-		sources: ["DPWH"],
-		images: [],
+		sources: [
+            "https://pdwire.com/dredging/massive-dredging-kicks-off-to-restore-mandalagan-rivers-capacity",
+            "https://www.facebook.com/share/p/15i1oZM3HC/",
+        ],
+		images: [
+            "images/mandalagan/mandalagan1.jpg",
+            "images/mandalagan/mandalagan2.jpg",
+        ],
 	},
 	{
 		name: "Circumferential Rd",
