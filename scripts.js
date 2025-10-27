@@ -1,4 +1,4 @@
-// script.js — assumes projects.js defines `PROJECTS` array
+// script.js — assumes flood_prone_areas.js defines `FLOOD_PRONE_AREAS` array
 const location_coordinates = [{ name: "Bacolod", x: 10.640739, y: 122.968956 }];
 
 const bacolod = location_coordinates.find((loc) => loc.name === "Bacolod");
@@ -32,35 +32,35 @@ function closeSidebar() {
 closeBtn.addEventListener("click", closeSidebar);
 map.on("click", () => closeSidebar());
 
-// Create markers from PROJECTS
-PROJECTS.forEach((project) => {
-	const marker = L.marker(project.coords);
+// Create markers from FLOOD_PRONE_AREAS
+FLOOD_PRONE_AREAS.forEach((fp_area) => {
+	const marker = L.marker(fp_area.coords);
 	const popupHtml = `
-        <b>${project.area}</b>
-        <br><i>${project.name}</i><br>
-        <small>${project.status} • ${project.start} - ${project.end}</small>`;
+        <b>${fp_area.name}</b>
+        <br><i>${fp_area.project}</i><br>
+        <small>${fp_area.status} • ${fp_area.start} - ${fp_area.end}</small>`;
 	marker.bindPopup(popupHtml);
 
 	marker.on("click", () => {
 		openSidebar(`
-      <h3 style="text-align: center;">${project.name}</h3>
-      <p><strong>Area:</strong> ${project.area}</p>
-      <p><strong>Budget:</strong> ${project.budget}</p>
-      <p><strong>Started:</strong> ${project.start}</p>
-      <p><strong>Estimated Completion:</strong> ${project.end}</p>
-      <p><strong>Status:</strong> ${project.status}</p>
-      <p>${project.desc}</p>
+      <h3 style="text-align: center;">${fp_area.name}</h3>
+      <p><strong>Flood-Control Project:</strong> ${fp_area.project}</p>
+      <p><strong>Budget:</strong> ${fp_area.budget}</p>
+      <p><strong>Started:</strong> ${fp_area.start}</p>
+      <p><strong>Estimated Completion:</strong> ${fp_area.end}</p>
+      <p><strong>Status:</strong> ${fp_area.status}</p>
+      <p>${fp_area.desc}</p>
       <div class="image-gallery">
-        ${project.images.map((image) => `<img src="${image}" alt="Project image">`).join("")}
+        ${fp_area.images.map((image) => `<img src="${image}" alt="Area image">`).join("")}
       </div>
-      <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
+      <p style="font-size:0.85em;color:#bbb;">Source: ${fp_area.source || "DPWH/news"}</p>
     `);
 
-		map.panTo(new L.LatLng(project.coords[0], project.coords[1]));
+		map.panTo(new L.LatLng(fp_area.coords[0], fp_area.coords[1]));
 	});
 
 	markersCluster.addLayer(marker);
-	markers.push({ marker: marker, data: project });
+	markers.push({ marker: marker, data: fp_area });
 });
 
 map.addLayer(markersCluster);

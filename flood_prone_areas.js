@@ -1,11 +1,11 @@
 // Curated major flood-control projects across the Philippines.
 // NOTE: coordinates are approximate (city/area centroids). Replace with precise coords if available.
 
-const PROJECTS = [
+const FLOOD_PRONE_AREAS = [
 // Visayas
 {
-name: "Bacolod Diversion Channel / Drainage Works",
-area:"SM Bacolod City",
+name: "SM Bacolod City",
+project:"Bacolod Diversion Channel / Drainage Works",
 budget:"₱152M (+request)",
 start:"2023",
 end:"Ongoing",
