@@ -51,15 +51,17 @@ FLOOD_PRONE_AREAS.forEach((fp_area) => {
       <p><strong>Status:</strong> ${fp_area.status}</p>
       <p>${fp_area.desc}</p>
       ${
-					fp_area.images && fp_area.images.length > 0
-						? `<div class="image-gallery">
-        ${fp_area.images
-									.map((image) => `<img src="${image}" alt="Area image">`)
-									.join("")}
+				fp_area.images && fp_area.images.length > 0
+					? `<div class="image-gallery">
+        ${fp_area.images.map((image) => `<img src="${image}">`).join("")}
       </div>`
-						: `<p style="font-size:0.85em;color:#bbb;">No images found.</p>`
-				}
-      <p style="font-size:0.85em;color:#bbb;">Source: ${fp_area.source || "DPWH/news"}</p>
+					: `<p style="font-size:0.85em;color:#bbb;">No images found.</p>`
+			}
+      ${
+				fp_area.sources && fp_area.sources.length > 0
+					? `${fp_area.sources.map((source) => `<p style="font-size:0.85em;color:#bbb;">Source: ${source || "DPWH/news"}</p>`).join("")}`
+					: `<p style="font-size:0.85em;color:#bbb;">Source: ${source || "DPWH/news"}</p>`
+			} 
     `);
 
 		map.panTo(new L.LatLng(fp_area.coords[0], fp_area.coords[1]));
