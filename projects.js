@@ -3,16 +3,21 @@
 
 const PROJECTS = [
 // Visayas
-{ 
+{
 name: "Bacolod Diversion Channel / Drainage Works",
 area:"SM Bacolod City",
 budget:"₱152M (+request)",
-start:"2024",
+start:"2023",
 end:"2025",
 status:"Ongoing",
 coords:[10.67221450, 122.94435940],
 desc:"Diversion channel and drainage improvements.",
-source:"https://www.pna.gov.ph/articles/1257376" 
+source:"https://www.pna.gov.ph/articles/1257376",
+images: [
+    "images/sm_bacolod/sm_bacolod1.jpg",
+    "images/sm_bacolod/sm_bacolod2.jpg",
+    "images/sm_bacolod/sm_bacolod3.jpg"
+],
 },
 ]
 // Export for script.js loading (if using module bundler). Else script.js accesses PROJECTS variable.
