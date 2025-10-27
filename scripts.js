@@ -41,12 +41,15 @@ PROJECTS.forEach((project) => {
 	marker.on("click", () => {
 		openSidebar(`
       <h3 style="text-align: center;">${project.name}</h3>
-      <p><strong>Location:</strong> ${project.area}</p>
+      <p><strong>Area:</strong> ${project.area}</p>
       <p><strong>Budget:</strong> ${project.budget}</p>
       <p><strong>Started:</strong> ${project.start}</p>
       <p><strong>Estimated Completion:</strong> ${project.end}</p>
       <p><strong>Status:</strong> ${project.status}</p>
       <p>${project.desc}</p>
+      <div class="image-gallery">
+        ${project.images.map(image => `<img src="${image}" alt="Project image">`).join('')}
+      </div>
       <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
     `);
 
@@ -109,6 +112,21 @@ function handleSearch() {
 searchBtn.addEventListener("click", handleSearch);
 searchInput.addEventListener("keypress", (e) => {
 	if (e.key === "Enter") handleSearch();
+});
+
+infoEl.addEventListener("click", (event) => {
+    if (event.target.tagName === "IMG") {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullscreenImage");
+        modal.style.display = "block";
+        modalImg.src = event.target.src;
+    }
+});
+
+// Close modal
+const modal = document.getElementById("imageModal");
+modal.addEventListener("click", () => {
+    modal.style.display = "none";
 });
 
 infoEl.addEventListener("scroll", () => {
