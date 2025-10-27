@@ -1,6 +1,13 @@
 // Curated major flood-control projects across the Philippines.
 // NOTE: coordinates are approximate (city/area centroids). Replace with precise coords if available.
 
+const status_level = [
+    "TBA",
+    "Flood-resistant",
+    "Slightly Flood-prone",
+    "Flood-prone",
+    "Very Flood-prone"
+]
 const FLOOD_PRONE_AREAS = [
 	// Visayas
 	{
@@ -9,7 +16,7 @@ const FLOOD_PRONE_AREAS = [
 		budget: "₱152M (+request)",
 		start: "2023",
 		end: "Ongoing",
-		status: "Very Flood-prone",
+		status: status_level[4],
 		coords: [10.6722145, 122.9443594],
 		desc: "In 2023, now mayor Greg Gasataya announced his project to build a diversion channel at the reclamation area. The pictures below, taken on October 14, 2025, showcases the fruit of his efforts.",
 		sources: [
@@ -29,7 +36,7 @@ const FLOOD_PRONE_AREAS = [
 		budget: "N/A",
 		start: "2024",
 		end: "Ongoing",
-		status: "Ongoing",
+		status: status_level[4],
 		desc: "Dredging and clearing of drainage routes.",
 		sources: ["Local Government"],
 		images: [],
@@ -41,7 +48,7 @@ const FLOOD_PRONE_AREAS = [
 		budget: "₱90M",
 		start: "2024",
 		end: "2025",
-		status: "Ongoing",
+		status: status_level[4],
 		desc: "Upgrading drainage systems to improve water flow.",
 		sources: [
             "https://pdwire.com/dredging/massive-dredging-kicks-off-to-restore-mandalagan-rivers-capacity",
@@ -59,7 +66,7 @@ const FLOOD_PRONE_AREAS = [
 		budget: "₱110M",
 		start: "2023",
 		end: "2025",
-		status: "Ongoing",
+		status: status_level[0],
 		desc: "Floodway construction to mitigate heavy rainfall flooding.",
 		sources: ["DPWH"],
 		images: [],
@@ -71,7 +78,7 @@ const FLOOD_PRONE_AREAS = [
 		budget: "₱130M",
 		start: "2024",
 		end: "2026",
-		status: "Approved",
+		status: status_level[0],
 		desc: "Pump station for enhanced water management.",
 		sources: ["DPWH"],
 		images: [],
@@ -82,7 +89,7 @@ const FLOOD_PRONE_AREAS = [
 		coords: [10.705, 122.955],
 		budget: "₱50M",
 		start: "2023",
-		end: "Ongoing",
+		end: status_level[3],
 		status: "Ongoing",
 		desc: "Clearing operations to prevent clogging of waterways.",
 		sources: ["DPWH"],
