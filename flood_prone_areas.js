@@ -43,15 +43,16 @@ const FLOOD_PRONE_AREAS = [
 	},
 	{
 		name: "Mandalagan",
-		project: "Mandalagan Drainage Upgrade",
+		project: "Large-scale Clearing & Desilting",
 		coords: [10.69032780, 122.95897850],
 		budget: "₱90M",
 		start: "2024",
 		end: "2025",
 		status: status_level[4],
-		desc: "Upgrading drainage systems to improve water flow.",
+		desc: "Greg Gasataya announced a flood-control project aiming to restore the Mandalagan river's natural flow and reduce flooding in surrounding barangays.",
 		sources: [
             "https://pdwire.com/dredging/massive-dredging-kicks-off-to-restore-mandalagan-rivers-capacity",
+            "https://watchmendailyjournal.com/2025/10/20/bacolod-begins-mitigation-in-mandalagan-river/",
             "https://www.facebook.com/share/p/15i1oZM3HC/",
         ],
 		images: [
