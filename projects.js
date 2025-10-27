@@ -11,7 +11,7 @@ start:"2023",
 end:"2025",
 status:"Ongoing",
 coords:[10.67221450, 122.94435940],
-desc:"Diversion channel and drainage improvements.",
+desc:"In 2023, now mayor Greg Gasataya announced his project to build a diversion channel at the reclamation area. The pictures below, taken on October 14, 2025, shows the fruit of his efforts.",
 source:"https://www.pna.gov.ph/articles/1257376",
 images: [
     "images/sm_bacolod/sm_bacolod1.jpg",
