@@ -47,6 +47,9 @@ PROJECTS.forEach((project) => {
       <p><strong>Estimated Completion:</strong> ${project.end}</p>
       <p><strong>Status:</strong> ${project.status}</p>
       <p>${project.desc}</p>
+      <div class="image-gallery">
+        ${project.images.map(image => `<img src="${image}" alt="Project image">`).join('')}
+      </div>
       <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
     `);
 
