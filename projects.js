@@ -10,7 +10,7 @@ budget:"₱152M (+request)",
 start:"2024",
 end:"2025",
 status:"Ongoing",
-coords:[10.6765,122.9511],
+coords:[10.67221450, 122.94435940],
 desc:"Diversion channel and drainage improvements.",
 source:"Local news/DPWH" 
 },
