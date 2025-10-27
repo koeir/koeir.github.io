@@ -5,7 +5,7 @@ const FLOOD_PRONE_AREAS = [
 // Visayas
 {
 name: "SM Bacolod City",
-project:"Bacolod Diversion Channel / Drainage Works",
+project:"Bacolod Diversion Channel",
 budget:"₱152M (+request)",
 start:"2023",
 end:"Ongoing",
@@ -19,5 +19,65 @@ images: [
     "images/sm_bacolod/sm_bacolod3.jpg"
 ],
 },
-]
-// Export for script.js loading (if using module bundler). Else script.js accesses PROJECTS variable.
+{
+name: "Banago",
+project: "Drainage / Dredging",
+coords: [10.702, 122.944],
+budget: "N/A",
+start: "2024",
+end: "TBA",
+status: "Ongoing",
+desc: "Dredging and clearing of drainage routes.",
+source: "Local Government",
+images:"",
+},
+{
+name: "Mandalagan",
+project: "Mandalagan Drainage Upgrade",
+coords: [10.701, 122.978],
+budget: "₱90M",
+start: "2024",
+end: "2025",
+status: "Ongoing",
+desc: "Upgrading drainage systems to improve water flow.",
+source: "DPWH",
+images:"",
+},
+{
+name: "Circumferential Rd",
+project: "Circumferential Road Floodway",
+coords: [10.704761, 122.960849],
+budget: "₱110M",
+start: "2023",
+end: "2025",
+status: "Ongoing",
+desc: "Floodway construction to mitigate heavy rainfall flooding.",
+source: "DPWH",
+images:"",
+},
+{
+name: "New Government Center",
+project: "NGC Pump Station",
+coords: [10.659318, 122.965078],
+budget: "₱130M",
+start: "2024",
+end: "2026",
+status: "Approved",
+desc: "Pump station for enhanced water management.",
+source: "DPWH",
+images:"",
+},
+{
+name: "Banago / Sto. Niño",
+project: "Estrella-Palapala Clearing",
+coords: [10.705, 122.955],
+budget: "₱50M",
+start: "2023",
+end: "TBA",
+status: "Ongoing",
+desc: "Clearing operations to prevent clogging of waterways.",
+source: "DPWH",
+images:"",
+}
+];
+// Export for script.js loading (if using module bundler). Else script.js accesses FLOOD_PRONE_AREAS array.
