@@ -35,7 +35,10 @@ map.on("click", () => closeSidebar());
 // Create markers from PROJECTS
 PROJECTS.forEach((project) => {
 	const marker = L.marker(project.coords);
-	const popupHtml = `<b>${project.name}</b><br>${project.area}<br><small>${project.status} • ${project.start} - ${project.end}</small>`;
+	const popupHtml = `
+        <b>${project.area}</b>
+        <br><i>${project.name}</i><br>
+        <small>${project.status} • ${project.start} - ${project.end}</small>`;
 	marker.bindPopup(popupHtml);
 
 	marker.on("click", () => {
@@ -48,12 +51,12 @@ PROJECTS.forEach((project) => {
       <p><strong>Status:</strong> ${project.status}</p>
       <p>${project.desc}</p>
       <div class="image-gallery">
-        ${project.images.map(image => `<img src="${image}" alt="Project image">`).join('')}
+        ${project.images.map((image) => `<img src="${image}" alt="Project image">`).join("")}
       </div>
       <p style="font-size:0.85em;color:#bbb;">Source: ${project.source || "DPWH/news"}</p>
     `);
 
-        map.panTo(new L.LatLng(project.coords[0], project.coords[1]));
+		map.panTo(new L.LatLng(project.coords[0], project.coords[1]));
 	});
 
 	markersCluster.addLayer(marker);
@@ -115,24 +118,24 @@ searchInput.addEventListener("keypress", (e) => {
 });
 
 infoEl.addEventListener("click", (event) => {
-    if (event.target.tagName === "IMG") {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("fullscreenImage");
-        modal.style.display = "block";
-        modalImg.src = event.target.src;
-    }
+	if (event.target.tagName === "IMG") {
+		const modal = document.getElementById("imageModal");
+		const modalImg = document.getElementById("fullscreenImage");
+		modal.style.display = "block";
+		modalImg.src = event.target.src;
+	}
 });
 
 // Close modal
 const modal = document.getElementById("imageModal");
 modal.addEventListener("click", () => {
-    modal.style.display = "none";
+	modal.style.display = "none";
 });
 
 infoEl.addEventListener("scroll", () => {
-    const { scrollTop, scrollHeight, clientHeight } = infoEl;
-    const atTop = scrollTop === 0;
+	const { scrollTop, scrollHeight, clientHeight } = infoEl;
+	const atTop = scrollTop === 0;
 
-    // Adjust opacity based on scroll position
-    closeBtn.style.opacity = atTop ? 1 : 0.5;
+	// Adjust opacity based on scroll position
+	closeBtn.style.opacity = atTop ? 1 : 0.5;
 });
