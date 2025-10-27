@@ -57,9 +57,11 @@ FLOOD_PRONE_AREAS.forEach((fp_area) => {
       </div>`
 					: `<p style="font-size:0.85em;color:#bbb;">No images found.</p>`
 			}
+      <br>
+      <p><b>Sources</b></p>
       ${
 				fp_area.sources && fp_area.sources.length > 0
-					? `${fp_area.sources.map((source) => `<p style="font-size:0.85em;color:#bbb;">Source: ${source || "DPWH/news"}</p>`).join("")}`
+					? `${fp_area.sources.map((source) => `<p style="font-size:0.85em;color:#bbb;">${source || "DPWH/news"}</p>`).join("")}`
 					: `<p style="font-size:0.85em;color:#bbb;">Source: ${source || "DPWH/news"}</p>`
 			} 
     `);
